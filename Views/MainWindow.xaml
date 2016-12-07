@@ -1,0 +1,49 @@
+﻿<Window x:Class="AutoCompleteTextBox.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoCompleteTextBox"
+        xmlns:viewModels="clr-namespace:AutoCompleteTextBox.ViewModels"
+        xmlns:control="clr-namespace:AutoCompleteTextBox.Control"
+        Title="MainWindow"  Height="200" Width="525">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="15"></Setter>
+                <Setter Property="FontFamily" Value="微软雅黑"></Setter>
+                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <control:AutoCompleteTextBox ItemsSource="{Binding Collection}" SelectedItem="{Binding SelectedStudentModel,UpdateSourceTrigger=PropertyChanged}"
+                                     Grid.Row="0" Grid.ColumnSpan="4"
+                                     DisplayMemberPath="Name" SelectedMode="FirstSpelling"
+                                     Height="30" VerticalAlignment="Top" Margin="10"></control:AutoCompleteTextBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="姓名："></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding SelectedStudentModel.Name}"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="性别："></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="3" Text="{Binding SelectedStudentModel.Sex}"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="年龄："></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding SelectedStudentModel.Age}"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="编号："></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="3" Text="{Binding SelectedStudentModel.Code}"></TextBlock>
+        <TextBox   Grid.Row="3" Grid.Column="0" Height="30"></TextBox>
+    </Grid>
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel x:Name="vm"></viewModels:MainWindowViewModel>
+    </Window.DataContext>
+</Window>

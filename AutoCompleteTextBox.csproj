@@ -53,10 +53,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Control\AutoCompleteTextBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -65,17 +61,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Control\AutoCompleteTextBox.xaml.cs">
-      <DependentUpon>AutoCompleteTextBox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Extension\Extensions.cs" />
-    <Compile Include="MVVM\MyPropertyChanged.cs" />
     <Compile Include="Models\StudentModel.cs" />
-    <Compile Include="MVVM\CommandActionExParameter.cs" />
-    <Compile Include="MVVM\DelegateCommand.cs" />
-    <Compile Include="MVVM\DelegateCommandBase.cs" />
-    <Compile Include="MVVM\MyCommandParameter.cs" />
-    <Compile Include="MVVM\WeakEventHandlerManager.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -83,7 +69,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Others\MyTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -107,7 +92,12 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MyWPFUI\MyWPFUI.csproj">
+      <Project>{5da01882-1409-4d27-a3f7-9c8d1c9fd7ed}</Project>
+      <Name>MyWPFUI</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

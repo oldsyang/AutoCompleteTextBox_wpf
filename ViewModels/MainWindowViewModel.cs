@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using AutoCompleteTextBox.Models;
-using AutoCompleteTextBox.MVVM;
+using MyWPFUI.Controls;
 
 namespace AutoCompleteTextBox.ViewModels
 {

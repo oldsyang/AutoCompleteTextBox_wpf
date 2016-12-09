@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using AutoCompleteTextBox.MVVM;
+using MyWPFUI.Controls;
 
 namespace AutoCompleteTextBox.Models
 {

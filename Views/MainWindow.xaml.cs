@@ -15,7 +15,8 @@ using System.Windows.Shapes;
 namespace AutoCompleteTextBox.Views
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// 来源地址：https://github.com/y19890902q/AutoCompleteTextBox_wpf.git
+    /// 最后编辑：yq  2016年12月4日
     /// </summary>
     public partial class MainWindow : Window
     {
